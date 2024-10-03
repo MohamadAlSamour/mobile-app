@@ -1,0 +1,89 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PrimeOption.ViewModels"
+             x:Class="PrimeOption.Views.CalendarPage">
+
+    <ContentPage.BindingContext>
+        <local:CalendarViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout>
+
+            <!-- Loading Indicator -->
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                               IsVisible="{Binding IsBusy}" 
+                               Color="Orange" 
+                               VerticalOptions="CenterAndExpand" 
+                               HorizontalOptions="CenterAndExpand" />
+
+            <!-- Week Label (Start Date) -->
+            <Label Text="{Binding CurrentWeekLabel}" 
+                   FontSize="Large" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="Start"/>
+                   
+            <!-- Week Number Label -->
+            <Label Text="{Binding WeekNumberLabel}" 
+                   FontSize="Medium" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="Start"/>
+
+            <!-- TableView for Events -->
+            <TableView Intent="Data">
+                <TableRoot>
+                    <TableSection Title="Events This Week">
+                        <!-- Bind days and events for each day -->
+                        <TableSection Title="{Binding DayLabel}">
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding requestName}" 
+                                           FontSize="Medium" 
+                                           FontAttributes="Bold" 
+                                           TextColor="Black" />
+                                    <Label Text="{Binding title}" 
+                                           FontSize="Small" 
+                                           TextColor="Gray" />
+                                    <Label Text="{Binding dateEvent, StringFormat='Date: {0:dd MMM yyyy}'}"
+                                           FontSize="Small" 
+                                           TextColor="Gray" />
+                                    <Label Text="{Binding startTimeEvent, StringFormat='Start: {0:hh\\:mm}'}"
+                                           FontSize="Small" 
+                                           TextColor="Gray" />
+                                    <Label Text="{Binding eindTimeEvent, StringFormat='End: {0:hh\\:mm}'}"
+                                           FontSize="Small" 
+                                           TextColor="Gray" />
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+        </StackLayout>
+
+        <!-- Bottom Buttons for Week Navigation -->
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="End"
+                     BackgroundColor="LightGray"
+                     Padding="10">
+            
+            <!-- Previous Week Button -->
+            <Button Text="Previous Week" 
+                    Command="{Binding PreviousWeekCommand}" 
+                    HorizontalOptions="StartAndExpand" />
+
+            <!-- Current Week Button -->
+            <Button Text="Current Week" 
+                    Command="{Binding CurrentWeekCommand}" 
+                    HorizontalOptions="CenterAndExpand" />
+
+            <!-- Next Week Button -->
+            <Button Text="Next Week" 
+                    Command="{Binding NextWeekCommand}" 
+                    HorizontalOptions="EndAndExpand" />
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

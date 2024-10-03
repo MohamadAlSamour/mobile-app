@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "gAxpDQpxfGlZ99HtQZ1HGu/SDvBeegteSgDg6P85KzBM9PH18jboMUEGSjcIq7QIOAmSsHWLn98Erjj3Sb0dlw==",
+  "success": true,
+  "projectFilePath": "/Users/alsamour/Projects/mobile-app/PrimeOption/PrimeOption/PrimeOption.csproj",
+  "expectedPackageFiles": [
+    "/Users/alsamour/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/alsamour/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/Users/alsamour/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/alsamour/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/alsamour/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/alsamour/.nuget/packages/xamarin.forms/5.0.0.2196/xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
