@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using PrimeOption.Models;
 using PrimeOption.ViewModels;
+using System.Linq;
 
 namespace PrimeOption.Views
 {
@@ -17,10 +18,14 @@ namespace PrimeOption.Views
             BindingContext = new CalendarViewModel();
         }
 
-        void SelectedEvent(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void SelectedEvent(System.Object sender, SelectionChangedEventArgs e)
         {
-            var _event = e.SelectedItem as Events;
-            DisplayAlert("Selected", $"{_event.title}\n {_event.dateEvent.ToString("dd-MM-yyyy")}\n {_event.startTimeEvent} - {_event.eindTimeEvent}\n ", "OK");
+            var _event = e.CurrentSelection.FirstOrDefault() as Events;
+
+            if (_event != null)
+            {
+                DisplayAlert("Selected", $"{_event.title}\n {_event.dateEvent:dd-MM-yyyy}\n {_event.startTimeEvent} - {_event.eindTimeEvent}\n ", "OK");
+            }
         }
     }
 }

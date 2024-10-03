@@ -1,34 +1,41 @@
 ﻿<Properties StartupConfiguration="{9B58F366-FCAF-4C77-BD49-A481E2C54631}|Default">
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.2.0" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.Ide.ItemProperties.PrimeOption.Android PreferredExecutionTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="PrimeOption/PrimeOption/ViewModels/CalendarViewModel.cs">
     <Files>
       <File FileName="PrimeOption/PrimeOption/Services/IDataStore.cs" />
-      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml" Line="37" Column="63" />
-      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml.cs" />
-      <File FileName="PrimeOption/PrimeOption/ViewModels/CalendarViewModel.cs" Line="14" Column="2" />
+      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml" Line="42" Column="1" />
+      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml.cs" Line="21" Column="27" />
+      <File FileName="PrimeOption/PrimeOption/ViewModels/CalendarViewModel.cs" Line="9" Column="26" />
+      <File FileName="PrimeOption/PrimeOption/Models/DayGroup.cs" Line="9" Column="24" />
+      <File FileName="PrimeOption/PrimeOption/Models/Events.cs" Line="1" Column="1" />
+      <File FileName="PrimeOption/PrimeOption/Models/Item.cs" Line="1" Column="1" />
+      <File FileName="PrimeOption/PrimeOption/Models/Root.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="PrimeOption" expanded="True">
+          <Node name="PrimeOption">
             <Node name="PrimeOption">
+              <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="CalendarViewModel.cs" selected="True" />
+              <Node name="ViewModels">
+                <Node name="AboutViewModel.cs" selected="True" />
               </Node>
-              <Node name="Views" expanded="True" />
+              <Node name="Views">
+                <Node name="CalendarPage.xaml" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.PrimeOption.Android PreferredExecutionTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.2.0" />
 </Properties>

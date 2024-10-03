@@ -17,6 +17,7 @@ namespace PrimeOption.ViewModels
         private DateTime startOfWeek;
         public ObservableCollection<string> WeekDates { get; set; } // Holds the date strings for each day
         public ObservableCollection<Events> Events { get; set; } // Holds filtered events for the week
+        public ObservableCollection<DayGroup> GroupedEvents { get; set; }
 
         private bool isBusy;
         public bool IsBusy
@@ -43,7 +44,7 @@ namespace PrimeOption.ViewModels
         {
             WeekDates = new ObservableCollection<string>();
             Events = new ObservableCollection<Events>();
-
+            GroupedEvents = new ObservableCollection<DayGroup>();
             PreviousWeekCommand = new Command(() => GoToPreviousWeek());
             NextWeekCommand = new Command(() => GoToNextWeek());
             CurrentWeekCommand = new Command(() => GoToCurrentWeek());
@@ -111,15 +112,23 @@ namespace PrimeOption.ViewModels
         // Filter events from the stored data for the current week
         private void FilterEventsForWeek(DateTime weekStart)
         {
-            // Get the start and end dates for the current week
+            // Clear existing grouped events
+            GroupedEvents.Clear();
+
+            // Get the end date for the week
             var weekEnd = weekStart.AddDays(6);
 
-            // Filter the events for the current week
-            var filteredEvents = allEvents.Where(e => e.dateEvent >= weekStart && e.dateEvent <= weekEnd).ToList();
+            // Group events by day
+            var groupedEvents = allEvents
+                .Where(e => e.dateEvent >= weekStart && e.dateEvent <= weekEnd)
+                .GroupBy(e => e.dateEvent.Date) // Group by the event's date
+                .Select(g => new DayGroup(g.Key, g)) // Create a DayGroup for each day
+                .ToList();
 
-            foreach (var dayEvent in filteredEvents)
+            // Add each grouped day with its events
+            foreach (var dayGroup in groupedEvents)
             {
-                Events.Add(dayEvent); // Add filtered events to the observable collection
+                GroupedEvents.Add(dayGroup);
             }
         }
 
