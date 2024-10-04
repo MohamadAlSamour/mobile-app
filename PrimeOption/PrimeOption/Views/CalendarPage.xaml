@@ -1,7 +1,9 @@
 ﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PrimeOption.ViewModels"
-             x:Class="PrimeOption.Views.CalendarPage">
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="PrimeOption.Views.CalendarPage"
+             Title="{Binding Title}">
 
     <ContentPage.BindingContext>
         <local:CalendarViewModel/>
@@ -19,9 +21,25 @@
 
             <!-- Week Number Label -->
             <Label Text="{Binding WeekNumberLabel}" 
-                   FontSize="Large" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="Start"/>
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="FillAndExpand"
+                   Padding="0, 10, 0, 10">
+                <Label.Triggers>
+                    <!-- Change background color to Red if it's the current week -->
+                    <DataTrigger TargetType="Label" Binding="{Binding IsCurrentWeek}" Value="True">
+                        <Setter Property="BackgroundColor" Value="#e26161" />
+                        <Setter Property="TextColor" Value="White" />
+                    </DataTrigger>
+                    <!-- Change background color to Gray and text color to Black if it's not the current week -->
+                    <DataTrigger TargetType="Label" Binding="{Binding IsCurrentWeek}" Value="False">
+                        <Setter Property="BackgroundColor"
+                                Value="#ffdb8e" />
+                        <Setter Property="TextColor" Value="Black" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
                    
             <!-- Week Label (Start Date) -->
             <Label Text="{Binding CurrentWeekLabel}" 
@@ -31,18 +49,36 @@
 
             <!-- Grouped Events CollectionView -->
             <CollectionView ItemsSource="{Binding GroupedEvents}"
-                            IsGrouped="True" SelectedItem="SelectedEvent">
+                            IsGrouped="True"
+                            >
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10" BackgroundColor="LightGray">
-                            <Label Text="{Binding Date, StringFormat='{0:dddd, dd MMMM yyyy}'}" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                        <StackLayout Padding="10"
+                                     BackgroundColor="#204e7a"
+                                     >
+                            <StackLayout.Triggers>
+                                <DataTrigger TargetType="StackLayout" Binding="{Binding Date}" Value="{x:Static sys:DateTime.Today}">
+                                    <Setter Property="BackgroundColor" Value="#e26161" />
+                                </DataTrigger>
+                            </StackLayout.Triggers>
+                            <Label Text="{Binding Date, StringFormat='{0:dddd, dd MMMM yyyy}'}"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"
+                                   TextColor="White">
+                                <!-- Add a DataTrigger to change the text color if the date is today -->
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Date}" Value="{x:Static sys:DateTime.Today}">
+                                        <Setter Property="TextColor" Value="White" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.GroupHeaderTemplate>
 
                 <CollectionView.ItemTemplate >
                     <DataTemplate>
-                        <StackLayout Padding="10"  HeightRequest="140">
+                        <StackLayout Padding="10"  HeightRequest="160">
                             <!-- Full Name -->
                             <Label Text="{Binding requestName}"
                                    FontSize="Medium" 
@@ -68,6 +104,17 @@
                             <Label Text="{Binding eindTimeEvent, StringFormat='End: {0:hh\\:mm}'}"
                                    FontSize="Small" 
                                    TextColor="Gray" />
+
+                             <Button Text="Read More"
+                                     HorizontalOptions="End"
+                                     Background="#95FFFFFF"
+                                     TextColor="IndianRed"
+                                     Padding="-20"
+                                     HeightRequest="20"
+                                Clicked="OnReadMoreClicked"
+                                CommandParameter="{Binding .}" />
+
+
                              <BoxView HeightRequest="4"
                                      BackgroundColor="IndianRed"
                                      VerticalOptions="End"/>

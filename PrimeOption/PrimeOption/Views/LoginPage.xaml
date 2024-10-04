@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Class="PrimeOption.Views.LoginPage"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#f4f4f4">
+             BackgroundColor="#f4f4f4"
+             Title="{Binding Title}">
 
     <ContentPage.Content>
         <StackLayout Padding="30" Spacing="15" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">

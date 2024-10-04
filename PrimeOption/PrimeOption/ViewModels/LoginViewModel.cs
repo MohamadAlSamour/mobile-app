@@ -44,6 +44,7 @@ namespace PrimeOption.ViewModels
 
         public LoginViewModel()
         {
+            Title = "Login";
             LoginCommand = new Command(async () => await ExecuteLoginCommand());
 
             // Load saved credentials if they exist

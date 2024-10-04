@@ -33,6 +33,17 @@ namespace PrimeOption.ViewModels
         public string CurrentWeekLabel { get; set; }
         public string WeekNumberLabel { get; set; }
 
+        private bool isCurrentWeek; // New property to track if the displayed week is the current week
+        public bool IsCurrentWeek
+        {
+            get => isCurrentWeek;
+            set
+            {
+                isCurrentWeek = value;
+                OnPropertyChanged(nameof(IsCurrentWeek)); // Notify UI of change
+            }
+        }
+
         public Command PreviousWeekCommand { get; }
         public Command NextWeekCommand { get; }
         public Command CurrentWeekCommand { get; }
@@ -42,6 +53,7 @@ namespace PrimeOption.ViewModels
 
         public CalendarViewModel()
         {
+            Title = "Calendar";
             WeekDates = new ObservableCollection<string>();
             Events = new ObservableCollection<Events>();
             GroupedEvents = new ObservableCollection<DayGroup>();
@@ -67,6 +79,7 @@ namespace PrimeOption.ViewModels
             DateTime today = DateTime.Today;
             startOfWeek = StartOfWeek(today);
             UpdateWeekDates();
+            IsCurrentWeek = true;
         }
 
         private void GoToPreviousWeek()
@@ -94,7 +107,7 @@ namespace PrimeOption.ViewModels
             }
 
             // Update labels
-            CurrentWeekLabel = $"Week of {startOfWeek:dd MMM yyyy}";
+            CurrentWeekLabel = $"{startOfWeek:dd MMM yyyy} - {startOfWeek.AddDays(6):dd MMM yyyy}";
             WeekNumberLabel = $"Week {GetIso8601WeekOfYear(startOfWeek)}";
 
             // Notify the UI
@@ -102,6 +115,8 @@ namespace PrimeOption.ViewModels
             OnPropertyChanged(nameof(CurrentWeekLabel));
             OnPropertyChanged(nameof(WeekNumberLabel));
             OnPropertyChanged(nameof(Events));
+
+            IsCurrentWeek = (startOfWeek <= DateTime.Today && startOfWeek.AddDays(6) >= DateTime.Today);
 
             if (allEvents != null)
             {

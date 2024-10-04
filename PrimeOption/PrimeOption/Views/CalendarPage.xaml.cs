@@ -18,14 +18,31 @@ namespace PrimeOption.Views
             BindingContext = new CalendarViewModel();
         }
 
-        void SelectedEvent(System.Object sender, SelectionChangedEventArgs e)
-        {
-            var _event = e.CurrentSelection.FirstOrDefault() as Events;
 
-            if (_event != null)
+        // Event handler for "Read More" button click
+        void OnReadMoreClicked(object sender, EventArgs e)
+        {
+            // Get the button that was clicked
+            var button = sender as Button;
+
+            // Get the bound event data from the CommandParameter
+            var selectedEvent = button?.CommandParameter as Events;
+
+            if (selectedEvent != null)
             {
-                DisplayAlert("Selected", $"{_event.title}\n {_event.dateEvent:dd-MM-yyyy}\n {_event.startTimeEvent} - {_event.eindTimeEvent}\n ", "OK");
+                // Display an alert with the event details
+                DisplayAlert($"{selectedEvent.title}",
+                    $"Day: {selectedEvent.dateEvent:dddd}\n" +
+                    $"Date: {selectedEvent.dateEvent:dd-MM-yyyy}\n" +
+                    $"Start: {selectedEvent.startTimeEvent:hh\\:mm}\n" +
+                    $"End: {selectedEvent.eindTimeEvent:hh\\:mm}\n" +
+                    $"Pause: {selectedEvent.pause:hh\\:mm}\n" +
+                    $"Project: {selectedEvent.requestName}\n" +
+                    $"Adress: {selectedEvent.requestAdress}\n" +
+                    $"Remark: {selectedEvent.remarkforWorker}\n",
+                    "OK");
             }
         }
+
     }
 }
