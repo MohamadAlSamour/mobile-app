@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PrimeOption.Views.PopupPage"
+             BackgroundColor="Transparent">
+
+    <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <!-- Semi-transparent background -->
+        <BoxView Color="Transparent" Opacity="0.6" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+
+        <!-- Popup content -->
+        <Frame Padding="20" CornerRadius="10" BackgroundColor="gainsboro" 
+               VerticalOptions="Center" HorizontalOptions="Center" 
+               WidthRequest="300" HeightRequest="400">
+            <StackLayout>
+                <Label Text="{Binding EventTitle}" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+
+                <Label Text="{Binding EventDetails}" FontSize="Medium" HorizontalOptions="Center" />
+
+                <!-- Button to open Google Maps -->
+                <Button Text="Open in Google Maps" Command="{Binding OpenMapsCommand}" />
+
+                <!-- Close button -->
+                <Button Text="Close" Command="{Binding CloseCommand}" />
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+
+</ContentPage>

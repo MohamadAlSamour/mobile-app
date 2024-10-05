@@ -138,6 +138,7 @@ namespace PrimeOption.ViewModels
                 .Where(e => e.dateEvent >= weekStart && e.dateEvent <= weekEnd)
                 .GroupBy(e => e.dateEvent.Date) // Group by the event's date
                 .Select(g => new DayGroup(g.Key, g)) // Create a DayGroup for each day
+                .OrderBy(g => (int)(g.Date.DayOfWeek == DayOfWeek.Sunday ? 7 : (int)g.Date.DayOfWeek))
                 .ToList();
 
             // Add each grouped day with its events

@@ -40,3 +40,4 @@
 /Users/alsamour/Projects/mobile-app/PrimeOption/PrimeOption/obj/Debug/netstandard2.0/PrimeOption.dll
 /Users/alsamour/Projects/mobile-app/PrimeOption/PrimeOption/obj/Debug/netstandard2.0/refint/PrimeOption.dll
 /Users/alsamour/Projects/mobile-app/PrimeOption/PrimeOption/obj/Debug/netstandard2.0/PrimeOption.pdb
+/Users/alsamour/Projects/mobile-app/PrimeOption/PrimeOption/obj/Debug/netstandard2.0/Views/PopupPage.xaml.g.cs

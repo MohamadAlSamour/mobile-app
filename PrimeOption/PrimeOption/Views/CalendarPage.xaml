@@ -3,7 +3,8 @@
              xmlns:local="clr-namespace:PrimeOption.ViewModels"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="PrimeOption.Views.CalendarPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             >
 
     <ContentPage.BindingContext>
         <local:CalendarViewModel/>
@@ -28,7 +29,7 @@
                 <Label.Triggers>
                     <!-- Change background color to Red if it's the current week -->
                     <DataTrigger TargetType="Label" Binding="{Binding IsCurrentWeek}" Value="True">
-                        <Setter Property="BackgroundColor" Value="#e26161" />
+                        <Setter Property="BackgroundColor" Value="brown" />
                         <Setter Property="TextColor" Value="White" />
                     </DataTrigger>
                     <!-- Change background color to Gray and text color to Black if it's not the current week -->
@@ -57,8 +58,11 @@
                                      BackgroundColor="#204e7a"
                                      >
                             <StackLayout.Triggers>
-                                <DataTrigger TargetType="StackLayout" Binding="{Binding Date}" Value="{x:Static sys:DateTime.Today}">
-                                    <Setter Property="BackgroundColor" Value="#e26161" />
+                                <DataTrigger TargetType="StackLayout"
+                                             Binding="{Binding Date}"
+                                             Value="{x:Static sys:DateTime.Today}"
+                                             >
+                                    <Setter Property="BackgroundColor" Value="brown" />
                                 </DataTrigger>
                             </StackLayout.Triggers>
                             <Label Text="{Binding Date, StringFormat='{0:dddd, dd MMMM yyyy}'}"
@@ -78,7 +82,9 @@
 
                 <CollectionView.ItemTemplate >
                     <DataTemplate>
-                        <StackLayout Padding="10"  HeightRequest="160">
+                        <StackLayout Padding="10"
+                                     HeightRequest="260"
+                                     >
                             <!-- Full Name -->
                             <Label Text="{Binding requestName}"
                                    FontSize="Medium" 
@@ -135,17 +141,23 @@
             <!-- Previous Week Button -->
             <Button Text="Previous Week" 
                     Command="{Binding PreviousWeekCommand}" 
-                    HorizontalOptions="StartAndExpand" />
+                    HorizontalOptions="StartAndExpand"
+                    BackgroundColor="#e87a17"
+                    TextColor="Black"/>
 
             <!-- Current Week Button -->
             <Button Text="Current Week" 
                     Command="{Binding CurrentWeekCommand}" 
-                    HorizontalOptions="CenterAndExpand" />
+                    HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="#e87a17"
+                    TextColor="Black"/>
 
             <!-- Next Week Button -->
             <Button Text="Next Week" 
                     Command="{Binding NextWeekCommand}" 
-                    HorizontalOptions="EndAndExpand" />
+                    HorizontalOptions="EndAndExpand"
+                    BackgroundColor="#e87a17"
+                    TextColor="Black"/>
 
         </StackLayout>
     </Grid>

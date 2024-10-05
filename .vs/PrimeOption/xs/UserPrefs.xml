@@ -1,62 +1,52 @@
 ﻿<Properties StartupConfiguration="{9B58F366-FCAF-4C77-BD49-A481E2C54631}|Default">
-  <MonoDevelop.Ide.ItemProperties.PrimeOption.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F73A1B7B-5E3A-42CF-9E51-5C3FD51E9E71" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.2.0" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.PrimeOption.Android PreferredExecutionTarget="Android.pixel_5_-_api_33" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.2.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PrimeOption/PrimeOption.iOS/Info.plist">
+  <MonoDevelop.Ide.ItemProperties.PrimeOption.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F73A1B7B-5E3A-42CF-9E51-5C3FD51E9E71" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="PrimeOption/PrimeOption/Services/IDataStore.cs" />
-      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml" Line="63" Column="52" />
-      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml.cs" Line="39" Column="64" />
-      <File FileName="PrimeOption/PrimeOption/ViewModels/CalendarViewModel.cs" Line="110" Column="34" />
+      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml" Line="82" Column="47" />
+      <File FileName="PrimeOption/PrimeOption/Views/CalendarPage.xaml.cs" Line="60" Column="68" />
+      <File FileName="PrimeOption/PrimeOption/ViewModels/CalendarViewModel.cs" Line="54" Column="35" />
       <File FileName="PrimeOption/PrimeOption/Models/DayGroup.cs" />
       <File FileName="PrimeOption/PrimeOption/Models/Events.cs" />
       <File FileName="PrimeOption/PrimeOption/Models/Item.cs" />
       <File FileName="PrimeOption/PrimeOption/Models/Root.cs" />
-      <File FileName="PrimeOption/PrimeOption/Views/AboutPage.xaml" Line="1" Column="1" />
-      <File FileName="PrimeOption/PrimeOption/ViewModels/AboutViewModel.cs" Line="12" Column="13" />
-      <File FileName="PrimeOption/PrimeOption/ViewModels/LoginViewModel.cs" Line="47" Column="27" />
-      <File FileName="PrimeOption/PrimeOption/Views/LoginPage.xaml" Line="10" Column="37" />
+      <File FileName="PrimeOption/PrimeOption/Views/AboutPage.xaml" />
+      <File FileName="PrimeOption/PrimeOption/ViewModels/AboutViewModel.cs" Line="1" Column="1" />
+      <File FileName="PrimeOption/PrimeOption/ViewModels/LoginViewModel.cs" Line="1" Column="1" />
+      <File FileName="PrimeOption/PrimeOption/Views/LoginPage.xaml" />
       <File FileName="PrimeOption/PrimeOption/ViewModels/BaseViewModel.cs" Line="1" Column="1" />
-      <File FileName="PrimeOption/PrimeOption/App.xaml" Line="21" Column="60" />
-      <File FileName="PrimeOption/PrimeOption/AppShell.xaml" Line="24" Column="80" />
-      <File FileName="PrimeOption/PrimeOption/GettingStarted.txt" Line="1" Column="1" />
-      <File FileName="PrimeOption/PrimeOption/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="PrimeOption/PrimeOption/App.xaml.cs" Line="1" Column="1" />
-      <File FileName="PrimeOption/PrimeOption.Android/MainActivity.cs" Line="14" Column="10" />
-      <File FileName="PrimeOption/PrimeOption.iOS/Main.cs" Line="1" Column="1" />
-      <File FileName="PrimeOption/PrimeOption.iOS/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="PrimeOption/PrimeOption/App.xaml" />
+      <File FileName="PrimeOption/PrimeOption/AppShell.xaml" />
+      <File FileName="PrimeOption/PrimeOption/GettingStarted.txt" />
+      <File FileName="PrimeOption/PrimeOption/AssemblyInfo.cs" />
+      <File FileName="PrimeOption/PrimeOption/App.xaml.cs" />
+      <File FileName="PrimeOption/PrimeOption.Android/MainActivity.cs" />
+      <File FileName="PrimeOption/PrimeOption.iOS/Main.cs" />
+      <File FileName="PrimeOption/PrimeOption.iOS/AppDelegate.cs" />
       <File FileName="PrimeOption/PrimeOption.iOS/Info.plist" />
       <File FileName="PrimeOption/PrimeOption.iOS/Entitlements.plist" />
-      <File FileName="PrimeOption/PrimeOption.iOS/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="PrimeOption/PrimeOption.iOS/Properties/AssemblyInfo.cs" />
+      <File FileName="PrimeOption/PrimeOption/Views/PopupPage.xaml" Line="9" Column="18" />
+      <File FileName="PrimeOption/PrimeOption/Views/PopupPage.xaml.cs" Line="22" Column="6" />
+      <File FileName="PrimeOption/PrimeOption/ViewModels/PopupAboutViewModel.cs" Line="38" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PrimeOption" expanded="True">
-            <Node name="PrimeOption">
-              <Node name="App.xaml" expanded="True" />
-            </Node>
-            <Node name="PrimeOption.Android">
-              <Node name="Resources" expanded="True">
-                <Node name="mipmap-hdpi" expanded="True" />
-                <Node name="values" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="PrimeOption.iOS">
-              <Node name="Properties" expanded="True" />
-              <Node name="Resources" expanded="True" />
-              <Node name="Info.plist" selected="True" />
-            </Node>
+            <Node name="PrimeOption.Android" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.PrimeOption.Android PreferredExecutionTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
